@@ -1,0 +1,41 @@
+apiVersion: operators.coreos.com/v1alpha1
+kind: ClusterServiceVersion
+metadata:
+  annotations:
+    alm-examples: '[]'
+    capabilities: Basic Install
+  name: go-tutorial-hack.v0.0.0
+  namespace: placeholder
+spec:
+  apiservicedefinitions: {}
+  customresourcedefinitions:
+    owned:
+    - description: Memcached is the Schema for the memcacheds API
+      displayName: Memcached
+      kind: Memcached
+      name: memcacheds.cache.example.com
+      version: v1alpha1
+  description: Golang Memcached Operator with hacks
+  displayName: Memcached Operator hack
+  install:
+    spec:
+      deployments: null
+    strategy: ""
+  installModes:
+  - supported: true
+    type: OwnNamespace
+  - supported: true
+    type: SingleNamespace
+  - supported: true
+    type: MultiNamespace
+  - supported: false
+    type: AllNamespaces
+  keywords:
+  - memcached
+  links:
+  - name: Go Tutorial Hack
+    url: https://go-tutorial-hack.domain
+  maturity: alpha
+  provider:
+    name: tlwu2013
+  version: 0.0.0
